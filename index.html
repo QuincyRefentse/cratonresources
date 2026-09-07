@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Craton Resources · independent advisory</title>
+  <!-- Font Awesome (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f5f3f0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e1e1e;
+      line-height: 1.5;
+    }
+
+    /* main container */
+    .site {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      background: #ffffff;
+      box-shadow: 0 0 40px rgba(0,0,0,0.02);
+    }
+
+    /* ------ header / logo ------ */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 16px;
+      border-bottom: 1px solid #e8e3db;
+      flex-wrap: wrap;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .logo-craton {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #1f2a3a;
+    }
+
+    .logo-resources {
+      font-size: 2.4rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: #5f6b7a;
+    }
+
+    .logo-tagline {
+      width: 100%;
+      font-size: 0.75rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #7a6b5a;
+      margin-top: 2px;
+      border-top: 1px solid #d6cdc0;
+      padding-top: 6px;
+      font-weight: 500;
+    }
+
+    .nav {
+      display: flex;
+      gap: 32px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2d3a4a;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #2d3a4a;
+      transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav a:hover {
+      color: #b28b6c;
+      border-bottom-color: #b28b6c;
+    }
+
+    /* hero */
+    .hero {
+      padding: 48px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hero-badge {
+      background: #ede8e1;
+      padding: 10px 20px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #3f3a32;
+      width: fit-content;
+      letter-spacing: 0.3px;
+      border: 1px solid #dad2c7;
+    }
+
+    .hero-badge i {
+      color: #b28b6c;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 8px;
+    }
+
+    .hero-title {
+      font-size: 3.1rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      color: #1f2a3a;
+    }
+
+    .hero-title span {
+      color: #7a6b5a;
+      font-weight: 300;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #3f4a57;
+      max-width: 500px;
+      border-left: 4px solid #b28b6c;
+      padding-left: 24px;
+      margin-top: 12px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px 50px;
+      background: #f8f6f3;
+      padding: 24px 28px;
+      border-radius: 20px;
+      margin-top: 8px;
+      border: 1px solid #e7dfd6;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #1f2a3a;
+      letter-spacing: -0.5px;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6b5f50;
+      margin-top: 2px;
+    }
+
+    /* section */
+    .section {
+      padding: 48px 0 32px;
+      border-top: 1px solid #e3dad0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      color: #1f2a3a;
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      color: #5f6b7a;
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+      max-width: 680px;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 28px 0 12px;
+    }
+
+    .strategy-card {
+      background: #faf8f5;
+      border-radius: 24px;
+      padding: 28px 22px 30px;
+      border: 1px solid #e3dad0;
+      transition: all 0.2s;
+    }
+
+    .strategy-card:hover {
+      background: #f6f1eb;
+      border-color: #cbb9a8;
+    }
+
+    .strategy-number {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #b28b6c;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .strategy-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1f2a3a;
+    }
+
+    .strategy-card p {
+      color: #3f4a57;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .strategy-list {
+      list-style: none;
+      margin: 16px 0 6px;
+    }
+
+    .strategy-list li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+      font-size: 0.9rem;
+      color: #2d3a4a;
+      border-bottom: 1px solid #ede6dd;
+    }
+
+    .strategy-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .strategy-list li i {
+      position: absolute;
+      left: 0;
+      top: 9px;
+      color: #b28b6c;
+      font-size: 0.8rem;
+    }
+
+    .corridor-box {
+      background: #f2eee9;
+      border-radius: 20px;
+      padding: 24px 28px;
+      margin: 24px 0 12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border-left: 6px solid #b28b6c;
+    }
+
+    .corridor-item {
+      flex: 1 1 160px;
+      margin: 6px 0;
+    }
+
+    .corridor-item strong {
+      display: block;
+      font-weight: 600;
+      color: #1f2a3a;
+      font-size: 0.9rem;
+    }
+
+    .corridor-item span {
+      font-size: 0.85rem;
+      color: #4f5a66;
+    }
+
+    .integrated-thesis {
+      background: #eae3db;
+      border-radius: 28px;
+      padding: 32px 36px;
+      margin: 36px 0 12px;
+      color: #1f2a3a;
+    }
+
+    .integrated-thesis h3 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+    }
+
+    .integrated-thesis p {
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+
+    .integrated-flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px 44px;
+      background: #ffffffd6;
+      padding: 20px 28px;
+      border-radius: 40px;
+      margin-top: 16px;
+      backdrop-filter: blur(2px);
+      border: 1px solid #cdbfb0;
+    }
+
+    .flow-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .flow-item i {
+      font-size: 1.6rem;
+      color: #6f5e4b;
+      width: 32px;
+    }
+
+    .flow-item div {
+      font-weight: 500;
+    }
+
+    .flow-item small {
+      display: block;
+      font-weight: 400;
+      color: #5f6b7a;
+      font-size: 0.8rem;
+    }
+
+    .btn {
+      background: #1f2a3a;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn:hover {
+      background: #3f4a57;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #b28b6c;
+      color: #1f2a3a;
+    }
+
+    .btn-outline:hover {
+      background: #ede8e1;
+    }
+
+    .contact-section {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 24px 0 10px;
+    }
+
+    .footer {
+      padding: 28px 0 20px;
+      border-top: 1px solid #e3dad0;
+      font-size: 0.8rem;
+      color: #5f6b7a;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer a {
+      color: #5f6b7a;
+      text-decoration: none;
+      margin: 0 10px 0 0;
+    }
+
+    .footer a:hover {
+      color: #1f2a3a;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .strategy-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .strategy-grid {
+        grid-template-columns: 1fr;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .nav {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .hero-title {
+        font-size: 2.4rem;
+      }
+      .integrated-flow {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="site">
+
+  <!-- header -->
+  <header class="header">
+    <div class="logo-block">
+      <span class="logo-craton">CRATON</span>
+      <span class="logo-resources">RESOURCES</span>
+      <div class="logo-tagline"><i class="fas fa-gem" style="margin-right: 6px; color: #b28b6c;"></i> INDEPENDENT MINING &amp; METALLURGICAL ADVISORY</div>
+    </div>
+    <div class="nav">
+      <a href="#">Advisory</a>
+      <a href="#">Trading</a>
+      <a href="#">Capital</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <div class="hero">
+    <div class="hero-badge">
+      <i class="fas fa-bolt"></i> Three strategies. One integrated practice.
+    </div>
+    <div class="hero-grid">
+      <div>
+        <div class="hero-title">The gap between <span>convention</span> and <span>opportunity</span></div>
+        <div class="hero-desc">
+          Craton Resources operates at the intersection of capital markets, commodity trading and fragmented industry consolidation. 
+          Each division is distinct. Together they form a practice built around a single thesis.
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Years building network</span></div>
+        <div class="stat-item"><span class="stat-number">SADC</span><span class="stat-label">Primary geography</span></div>
+        <div class="stat-item"><span class="stat-number">3</span><span class="stat-label">Integrated divisions</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRATEGY ONE : ADVISORY -->
+  <div class="section">
+    <div class="section-title">Strategy One <span style="font-weight:300; color:#7a6b5a;">· Advisory</span></div>
+    <div class="section-sub">The advisory gap: debt that banks will not build.</div>
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <div class="strategy-number">01</div>
+        <h3>Deal Origination</h3>
+        <p>Our commodity network surfaces opportunities that never reach a bank desk.</p>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-number">02</div>
+        <h3>Facility Structuring</h3>
+        <p>Built from the asset up, into bankable structures lenders can approve.</p>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-number">03</div>
+        <h3>Capital Placement</h3>
+        <p>Non-bank lenders, family offices and DFIs. We place what banks decline.</p>
+      </div>
+    </div>
+    <div style="margin-top: 16px; background: #f4f0ea; border-radius: 40px; padding: 14px 24px; border:1px solid #dfd5ca;">
+      <i class="fas fa-file-invoice" style="color:#b28b6c; margin-right: 12px;"></i>
+      <span style="font-weight:500;">Asset-Backed Structuring:</span> commodity stocks and receivables priced from the market up.
+    </div>
+  </div>
+
+  <!-- STRATEGY TWO : TRADING -->
+  <div class="section">
+    <div class="section-title">Strategy Two <span style="font-weight:300; color:#7a6b5a;">· Trading</span></div>
+    <div class="section-sub">Market fragmentation as structural opportunity.</div>
+    <p style="margin-bottom: 20px; max-width: 780px;">Across SADC agricultural and commodity markets, supply is available but dispersed. Producers are fragmented, small-scale farmers, artisanal miners, dispersed co-operatives, and buyers are distant, institutional. The gap between them is a structural arbitrage that rewards whoever builds the aggregation layer.</p>
+    
+    <div class="corridor-box">
+      <div class="corridor-item"><strong><i class="fas fa-arrow-up" style="margin-right: 6px;"></i> Supply Side</strong><span>Producer aggregation — small-scale farmers, artisanal miners, co-operatives consolidated into bankable volume.</span></div>
+      <div class="corridor-item"><strong><i class="fas fa-arrow-down" style="margin-right: 6px;"></i> Demand Side</strong><span>Buyer access — institutional off-takers, processors, export buyers connected to verified SADC supply.</span></div>
+      <div class="corridor-item"><strong><i class="fas fa-cogs"></i> The Edge</strong><span>Technical pricing — polymetallic concentrates, off-spec materials, complex agri commodities.</span></div>
+    </div>
+    <div style="font-style: italic; color:#4f5a66; padding: 10px 0;">The Corridor Model: fragmented supply + aggregation + verified demand = a corridor. We build the structure that neither side could create alone.</div>
+  </div>
+
+  <!-- STRATEGY THREE : CAPITAL -->
+  <div class="section">
+    <div class="section-title">Strategy Three <span style="font-weight:300; color:#7a6b5a;">· Capital</span></div>
+    <div class="section-sub">Capital deployed where the market cannot reach.</div>
+    <div class="strategy-grid">
+      <div class="strategy-card"><span class="strategy-number">01</span><h3>Direct Investment</h3><p>Our own capital into real assets and conviction positions.</p></div>
+      <div class="strategy-card"><span class="strategy-number">02</span><h3>Capital Management</h3><p>Third-party capital from family offices wanting SADC exposure.</p></div>
+      <div class="strategy-card"><span class="strategy-number">03</span><h3>Deal Origination</h3><p>Packaging SADC opportunities for PE funds and family offices with Africa mandates.</p></div>
+    </div>
+    <div style="background: #e9e2d9; border-radius: 60px; padding: 10px 24px; display: inline-block; margin-top: 8px;">
+      <i class="fas fa-bullseye" style="color:#6f5e4b;"></i> Focus: energy transition, food systems, industrial technology &amp; SADC real assets.
+    </div>
+  </div>
+
+  <!-- INTEGRATED THESIS -->
+  <div class="integrated-thesis">
+    <h3>The Integrated Thesis <span style="font-weight:300; color:#4a3f34;">· why three divisions become one edge</span></h3>
+    <p><strong>Advisory feeds Trading</strong> — Borrowers who need working capital against commodity inventory become trading counterparties. The credit relationship and the trading relationship reinforce each other.</p>
+    <p><strong>Trading feeds Advisory</strong> — Two decades of commodity trading surfaces credit opportunities before they become visible to financial advisors. The origination network is built on trading relationships, not database searches.</p>
+    <p><strong>Both feed Capital</strong> — Deal flow from Advisory and trading positions from the Trading division create the investment pipeline for Capital. Third-party investors access a SADC origination capability they cannot build themselves.</p>
+    <div class="integrated-flow">
+      <div class="flow-item"><i class="fas fa-handshake"></i><div>Advisory <small>origination &amp; structuring</small></div></div>
+      <div class="flow-item"><i class="fas fa-arrow-right" style="color:#b28b6c;"></i></div>
+      <div class="flow-item"><i class="fas fa-chart-line"></i><div>Trading <small>aggregation &amp; corridors</small></div></div>
+      <div class="flow-item"><i class="fas fa-arrow-right" style="color:#b28b6c;"></i></div>
+      <div class="flow-item"><i class="fas fa-coins"></i><div>Capital <small>deployment &amp; management</small></div></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; padding: 36px 0 16px; gap: 20px;">
+    <div>
+      <h3 style="font-weight: 500; font-size: 1.6rem; letter-spacing: -0.3px;">Three strategies. <br>One conversation to start.</h3>
+      <p style="color: #3f4a57;">Advisory, Trading or Capital. The right division will respond.</p>
+    </div>
+    <button class="btn"><i class="fas fa-paper-plane"></i> Get in touch →</button>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div>
+      <span style="font-weight: 600; color:#1f2a3a;">CRATON RESOURCES</span> · independent mining &amp; metallurgical advisory
+    </div>
+    <div>
+      <a href="#"><i class="fas fa-info-circle"></i> About</a>
+      <a href="#"><i class="fas fa-leaf"></i> ESG</a>
+      <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+      <span style="margin-left: 12px;">© 2024 Dobrilogix (Pty) Ltd t/a Pyrocor</span>
+    </div>
+  </div>
+</div>
+
+<!-- minimal JS (interactive / console) -->
+<script>
+  (function() {
+    console.log('Craton Resources · three strategies, one integrated practice.');
+    const btn = document.querySelector('.btn');
+    if (btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('📩 Contact: advisory@cratonresources.com  |  trading@cratonresources.com  |  capital@cratonresources.com');
+      });
+    }
+    // nav links demo
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const txt = this.innerText.trim();
+        alert(`🔍 ${txt} · please reach out via the contact form.`);
+      });
+    });
+  })();
+</script>
+</body>
+</html>

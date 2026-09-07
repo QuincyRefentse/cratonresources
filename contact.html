@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact · Craton Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo-block">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-craton">CRATON</span>
+                    <span class="logo-resources">RESOURCES</span>
+                    <div class="logo-tagline"><i class="fas fa-gem"></i> INDEPENDENT MINING &amp; METALLURGICAL ADVISORY</div>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="advisory.html">Advisory</a>
+                <a href="trading.html">Trading</a>
+                <a href="capital.html">Capital</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="mobile-nav">
+        <div class="mobile-nav-inner">
+            <button class="mobile-close">&times;</button>
+            <a href="advisory.html">Advisory</a>
+            <a href="trading.html">Trading</a>
+            <a href="capital.html">Capital</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Three strategies. One conversation to start.</h2>
+                        <p>Advisory, Trading or Capital. The right division will respond.</p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-building"></i>
+                                <div>
+                                    <strong>Head Office</strong>
+                                    <span>Johannesburg, South Africa</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <a href="mailto:info@cratonresources.com">info@cratonresources.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <span>+27 (0) 11 123 4567</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-divisions">
+                            <h3>Direct contacts</h3>
+                            <div class="division-contact">
+                                <span class="division-badge">Advisory</span>
+                                <a href="mailto:advisory@cratonresources.com">advisory@cratonresources.com</a>
+                            </div>
+                            <div class="division-contact">
+                                <span class="division-badge">Trading</span>
+                                <a href="mailto:trading@cratonresources.com">trading@cratonresources.com</a>
+                            </div>
+                            <div class="division-contact">
+                                <span class="division-badge">Capital</span>
+                                <a href="mailto:capital@cratonresources.com">capital@cratonresources.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <h3>Send a message</h3>
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="division">Division</label>
+                                <select id="division" name="division">
+                                    <option value="advisory">Advisory</option>
+                                    <option value="trading">Trading</option>
+                                    <option value="capital">Capital</option>
+                                    <option value="general">General Enquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-paper-plane"></i> Send message
+                            </button>
+                            <div class="form-response" id="formResponse"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="footer-logo">CRATON RESOURCES</span>
+                <span class="footer-tagline">independent mining &amp; metallurgical advisory</span>
+            </div>
+            <div class="footer-links">
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#"><i class="fas fa-leaf"></i> ESG</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <div class="footer-copy">&copy; 2024 Dobrilogix (Pty) Ltd t/a Pyrocor</div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
